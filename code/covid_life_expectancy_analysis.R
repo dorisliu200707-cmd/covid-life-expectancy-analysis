@@ -23,7 +23,7 @@ head(dat)
 summary(dat)
 
 # Leave extra space below the graph for the figure caption
-par(mar = c(12, 4, 4, 2) + 0.1)
+par(mar = c(11, 4, 4, 2) + 0.1)
 
 # Create a line graph of male life expectancy over time
 plot(dat$year, dat$Male,
@@ -32,7 +32,8 @@ plot(dat$year, dat$Male,
      ylim = range(c(dat$Male, dat$Female)),
      xlab = "Year",
      ylab = "Life Expectancy (Years)",
-     main = "Male and Female Life Expectancy\nin Canada")
+     main = "Male and Female Life Expectancy in Canada",
+     cex.main = 1.3)
 
 # Add the female life expectancy line to the graph
 lines(dat$year, dat$Female, col = "red")
@@ -45,22 +46,16 @@ legend("bottomleft",
 
 # Add a figure caption below the graph
 mtext("Figure 1. Male and female life expectancy in Canada (2019 to 2024).",
-      side = 1, line = 5, adj = 0, cex = 0.65)
+      side = 1, line = 5, adj = 0, cex = 0.8)
 
 mtext("Life expectancy declined during the COVID-19 pandemic (2020–2022),",
-      side = 1, line = 6, adj = 0, cex = 0.65)
+      side = 1, line = 6, adj = 0, cex = 0.8)
 
-mtext("with females consistently having higher life expectancy than males.",
-      side = 1, line = 7, adj = 0, cex = 0.65)
+mtext("with females consistently having higher life expectancy than males. Differences between male and",
+      side = 1, line = 7, adj = 0, cex = 0.8)
 
-mtext("Differences between male and female life expectancy",
-      side = 1, line = 8, adj = 0, cex = 0.65)
-
-mtext("during 2020–2022 were statistically analyzed using",
-      side = 1, line = 9, adj = 0, cex = 0.65)
-
-mtext("a Welch two-sample t-test: p < 0.001.",
-      side = 1, line = 10, adj = 0, cex = 0.65)
+mtext("female life expectancy during 2020–2022 were statistically analyzed using a Welch two-sample t-test: p < 0.001.",
+      side = 1, line = 8, adj = 0, cex = 0.8)
 
 # Select data during the COVID-19 period (2020–2022)
 covid <- subset(dat, year >= 2020 & year <= 2022)
